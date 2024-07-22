@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $order_name = $_POST['order'];
     $additional_food = $_POST['additional_food'];
     $quantity = $_POST['quantity'];
-    $datetime = $_POST['email'];
+    $email = $_POST['email'];
     $address = $_POST['address'];
     $message = $_POST['message'];
 
@@ -32,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";
         header("LOCATION:index.html");
+
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
